@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "unimeet",
+    "name": "UniMeet",
     "slug": "unimeet",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,9 +8,14 @@
     "scheme": "unimeet",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "bundleIdentifier": "com.mgverse.unimeet",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "UniMeet profilinize fotoğraf eklemek ve güncellemek için galeri erişim izni gereklidir.",
+        "NSCameraUsageDescription": "UniMeet profilinize doğrudan fotoğraf çekip eklemek için kamera erişimi gereklidir."
+      }
     },
     "android": {
+      "package": "com.mgverse.unimeet",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -32,7 +37,22 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#6366f1"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "UniMeet profilinize fotoğraf eklemek için galeri erişim izni istiyoruz."
+        }
+      ],
+      "expo-localization",
+      "@react-native-community/datetimepicker"
     ],
     "experiments": {
       "typedRoutes": true,
